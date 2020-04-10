@@ -44,9 +44,9 @@ For ease of reuse create alias or a function in your shell. For example in `~/.p
 ```shell script
 function okta() {
     docker run --rm \
-        --user $(id -u):$(id -g)
-        -v $(pwd)/.okta_aws_login_config:/root/.okta_aws_login_config \
-        -v $(pwd)/.aws/credentials:/root/.aws/credentials \
+        --user $(id -u):$(id -g) \
+        -v $(pwd)/.okta_aws_login_config:/.okta_aws_login_config \
+        -v $(pwd)/.aws/credentials:/.aws/credentials \
         -it christophshyper/docker-okta-aws-sso "$@";
 }
 ```
@@ -61,7 +61,7 @@ For more information run `okta --help`.
 okta_username = user.name@domain.com
 aws_rolename =
 cred_profile = default
-aws_default_duration = 21600
+aws_default_duration = 3600
 okta_org_url = https://dev-123456.okta.com
 app_url = https://dev-123456.okta.com/home/amazon_aws/1fD3c8s3mfhMHxF1o9id/272
 preferred_mfa_type = token:software:totp
@@ -72,6 +72,8 @@ resolve_aws_alias = True
 remember_device = True
 output_format = json
 ```
+
+Parameters, like password, can be also passed via environment variables for reuse. But keep in mind security concerns.
 
 ## Running
 Depending on the configuration (above) new AWS credentials can be obtained by running:
