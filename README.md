@@ -42,12 +42,12 @@ This Docker image just packs their tool to quick reuse without the need of insta
 ## Configuration
 For ease of reuse create alias or a function in your shell. For example in `~/.profile` enter following:
 ```shell script
-function okta() {
+function okta-aws() {
     docker run --rm \
         --user $(id -u):$(id -g) \
-        -v $(pwd)/.okta_aws_login_config:/.okta_aws_login_config \
-        -v $(pwd)/.aws/credentials:/.aws/credentials \
-        -it christophshyper/docker-okta-aws-sso "$@";
+        --volume $(pwd)/.okta_aws_login_config:/.okta_aws_login_config \
+        --volume $(pwd)/.aws/credentials:/.aws/credentials \
+        -it christophshyper/docker-okta-aws-sso:latest "$@";
 }
 ```
 
