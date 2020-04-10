@@ -23,23 +23,20 @@ This Docker image just packs their tool to quick reuse without the need of insta
 ](https://github.com/christophshyper/docker-okta-aws-sso "shields.io")
 [![Push to master](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20master?color=brightgreen&label=Master%20branch&logo=github&style=flat-square)
 ](https://github.com/ChristophShyper/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+master%22)
-[![Push to other](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20other?color=brightgreen&label=Other%20branches&logo=github&style=flat-square)
+[![Pull requests](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20other?color=brightgreen&label=Pull%20requests&logo=github&style=flat-square)
 ](https://github.com/ChristophShyper/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+other%22)
 [
 ![DockerHub](https://img.shields.io/badge/docker-christophshyper%2Fdocker--okta--aws--sso-blue.svg?style=flat-square&logo=docker)
-![Dockerfile size](https://img.shields.io/github/size/christophshyper/docker-okta-aws-sso/Dockerfile?label=Dockerfile&style=flat-square&logo=docker)
 ![Docker Pulls](https://img.shields.io/docker/pulls/christophshyper/docker-okta-aws-sso?color=blue&label=Pulls&logo=docker&style=flat-square)
 ![Docker version](https://img.shields.io/docker/v/christophshyper/docker-okta-aws-sso?color=blue&label=Version&logo=docker&style=flat-square)
 ](https://hub.docker.com/r/christophshyper/docker-okta-aws-sso "shields.io")
 
+
 ## Prerequisites
-Operating system: MacOS, Linux or Windows Subsystem for Linux.
-
-Software: Docker
-
-AWS: IAM roles prepared for users to assume. IAM user for Okta properly configured.
-
-Okta: Okta connected via SAML with AWS. Users having assigned AWS application and chosen proper roles.
+* Operating system: MacOS, Linux or Windows Subsystem for Linux.
+* Software: Docker
+* AWS: IAM roles prepared for users to assume. IAM user for Okta properly configured.
+* Okta: Okta connected via SAML with AWS. Users having assigned AWS application and chosen proper roles.
 
 
 ## Configuration
@@ -77,6 +74,6 @@ output_format = json
 ```
 
 ## Running
-Depending on confiruation new AWS credentials can be obtained by running:
+Depending on the configuration (above) new AWS credentials can be obtained by running:
 * for a default action: `okta`
 * for a selected profile `okta --profile Administrator`

@@ -65,7 +65,7 @@ build: ## Buid Docker image
         --label	"maintainer=Krzysztof Szyper <biotyk@mail.com>" \
         --label	"repository=https://github.com/ChristophShyper/docker-okta-aws-sso" \
 		.
-		@rm -rf $(DEP_REPO)
+	@rm -rf $(DEP_REPO)
 
 push: ## Push to DockerHub
 	$(info $(NL)$(TXT_GREEN) == STARTING DEPLOYMENT == $(TXT_RESET))
