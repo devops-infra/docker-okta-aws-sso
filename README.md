@@ -8,6 +8,7 @@ The best, in my humble opinion, tool that fixes that problem is [gimme-aws-creds
 
 For details information about [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds)'s configuration please refer to [README.md](https://github.com/Nike-Inc/gimme-aws-creds/blob/master/README.md).
 <br>Docker's entrypoint is binary of `gimme-aws-creds` and can accept any parameters, even when running as an alias, or a function (check usage below).
+<br>It supports Multi Factor Authentication. Not only with Authenticator app but even with Yubikey.
 
 This Docker image just packs their tool to quick reuse without the need of installing with Python. 
 <br>It should have access only to following configuration files: 
