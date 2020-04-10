@@ -7,7 +7,7 @@ Okta is one of the leaders of SSO solutions, but lacks native CLI tools.
 The best, in my humble opinion, tool that fixes that problem is [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds) made by [Nike Inc.](http://engineering.nike.com). More of their interesting work can be found on [Nike-Inc](https://github.com/Nike-Inc).
 
 For details information about [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds)'s configuration please refer to [README.md](https://github.com/Nike-Inc/gimme-aws-creds/blob/master/README.md).
-<br>Docker's entrypoint is binary of `gimme-aws-creds` and can accept any parameters, even when running as an alias or a function (check usage below).
+<br>Docker's entrypoint is binary of `gimme-aws-creds` and can accept any parameters, even when running as an alias, or a function (check usage below).
 
 This Docker image just packs their tool to quick reuse without the need of installing with Python. 
 <br>It should have access only to following configuration files: 
@@ -64,8 +64,8 @@ okta_username = user.name@domain.com
 aws_rolename =
 cred_profile = default
 aws_default_duration = 21600
-okta_org_url = https://dev.okta-emea.com
-app_url = https://brainly.okta-emea.com/home/amazon_aws/0oa3c8ogm0FM6xY1o0i7/272
+okta_org_url = https://dev-123456.okta.com
+app_url = https://dev-123456.okta.com/home/amazon_aws/1fD3c8s3mfhMHxF1o9id/272
 preferred_mfa_type = token:software:totp
 device_token =
 gimme_creds_server = appurl
