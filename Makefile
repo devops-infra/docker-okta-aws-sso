@@ -44,6 +44,7 @@ build: ## Buid Docker image
 	$(info $(TXT_GREEN)Commit hash:$(TXT_YELLOW)        $(GITHUB_SHORT_SHA)$(TXT_RESET))
 	$(info $(TXT_GREEN)Build date:$(TXT_YELLOW)         $(BUILD_DATE)$(TXT_RESET))
 	$(info $(NL)$(TXT_GREEN)Checkout repository:$(TXT_YELLOW) $(DEP_OWNER)/$(DEP_REPO)$(TXT_RESET))
+	@rm -rf $(DEP_REPO)
 	@git clone http://github.com/$(DEP_OWNER)/$(DEP_REPO)
 	$(info $(NL)$(TXT_GREEN)Building Docker image:$(TXT_YELLOW) $(DOCKER_NAME):$(VERSION)$(TXT_RESET))
 	@cd $(DEP_REPO); docker build \
@@ -64,6 +65,7 @@ build: ## Buid Docker image
         --label	"maintainer=Krzysztof Szyper <biotyk@mail.com>" \
         --label	"repository=https://github.com/ChristophShyper/docker-okta-aws-sso" \
 		.
+		@rm -rf $(DEP_REPO)
 
 push: ## Push to DockerHub
 	$(info $(NL)$(TXT_GREEN) == STARTING DEPLOYMENT == $(TXT_RESET))
