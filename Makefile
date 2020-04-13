@@ -16,11 +16,11 @@ DOCKER_USER_ID := christophshyper
 DOCKER_IMAGE := docker-okta-aws-sso
 DOCKER_NAME := $(DOCKER_USER_ID)/$(DOCKER_IMAGE)
 BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
-NAME := "Single Sign-On solution for AWS via Okta"
-DESCRIPTION := "Docker image for AWS Signle Sign-On with Okta"
-REPO_URL := "https://github.com/ChristophShyper/docker-okta-aws-sso"
-AUTHOR := "Krzysztof Szyper <biotyk@mail.com>"
-HOMEPAGE := "https://christophshyper.github.io/"
+NAME := Single Sign-On solution for AWS via Okta
+DESCRIPTION := Docker image for AWS Signle Sign-On with Okta
+REPO_URL := https://github.com/ChristophShyper/docker-okta-aws-sso
+AUTHOR := Krzysztof Szyper <biotyk@mail.com>
+HOMEPAGE := https://christophshyper.github.io/
 
 # Dependent repo
 DEP_OWNER := Nike-Inc
@@ -52,9 +52,7 @@ build: ## Build Docker image
 	@rm -rf $(DEP_REPO)
 	@git clone http://github.com/$(DEP_OWNER)/$(DEP_REPO)
 	$(info $(NL)$(TXT_GREEN)Building Docker image:$(TXT_YELLOW) $(DOCKER_NAME):$(VERSION)$(TXT_RESET))
-	@cd $(DEP_REPO); docker build \
-		--file=Dockerfile \
-		--tag=$(DOCKER_NAME):$(VERSION)  \
+	cd $(DEP_REPO); docker build \
 		--label "org.label-schema.build-date=${BUILD_DATE}" \
 		--label "org.label-schema.name=${NAME}" \
 		--label "org.label-schema.description=${DESCRIPTION}" \
@@ -78,8 +76,10 @@ build: ## Build Docker image
 		--label "org.opencontainers.image.description=${DESCRIPTION}" \
 		--label "maintainer=${AUTHOR}" \
 		--label "repository=${REPO_URL}" \
+		--file=Dockerfile \
+		--tag=$(DOCKER_NAME):$(VERSION) \
 		.
-	@rm -rf $(DEP_REPO)
+	@rm -rf $(DEP_REPO)/
 
 push: ## Push to DockerHub
 	$(info $(NL)$(TXT_GREEN) == STARTING DEPLOYMENT == $(TXT_RESET))
