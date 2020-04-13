@@ -12,8 +12,9 @@ For details information about [gimme-aws-creds](https://github.com/Nike-Inc/gimm
 
 This Docker image just packs their tool to quick reuse without the need of installing with Python. 
 <br>It should have access only to following configuration files: 
-* [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds), default is `~/..okta_aws_login_config`
+* [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds), default is `~/.okta_aws_login_config`
 * [aws-cli](https://github.com/aws/aws-cli), default is `~/.aws/credentials`
+
 
 ## Badge swag
 [
@@ -23,12 +24,14 @@ This Docker image just packs their tool to quick reuse without the need of insta
 ](https://github.com/christophshyper/docker-okta-aws-sso "shields.io")
 [![Push to master](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20master?color=brightgreen&label=Master%20branch&logo=github&style=flat-square)
 ](https://github.com/ChristophShyper/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+master%22)
-[![Pull requests](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20other?color=brightgreen&label=Pull%20requests&logo=github&style=flat-square)
+[![Push to other](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20other?color=brightgreen&label=Pull%20requests&logo=github&style=flat-square)
 ](https://github.com/ChristophShyper/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+other%22)
+<br>
 [
 ![DockerHub](https://img.shields.io/badge/docker-christophshyper%2Fdocker--okta--aws--sso-blue.svg?style=flat-square&logo=docker)
+![Image size](https://img.shields.io/docker/image-size/christophshyper/docker-okta-aws-sso/latest?label=Image%20size&style=flat-square&logo=docker)
+![Dockerfile size](https://img.shields.io/github/size/christophshyper/docker-okta-aws-sso/Dockerfile?label=Dockerfile%20size&style=flat-square&logo=docker)
 ![Docker Pulls](https://img.shields.io/docker/pulls/christophshyper/docker-okta-aws-sso?color=blue&label=Pulls&logo=docker&style=flat-square)
-![Docker version](https://img.shields.io/docker/v/christophshyper/docker-okta-aws-sso?color=blue&label=Version&logo=docker&style=flat-square)
 ](https://hub.docker.com/r/christophshyper/docker-okta-aws-sso "shields.io")
 
 
@@ -74,6 +77,7 @@ output_format = json
 ```
 
 Parameters, like password, can be also passed via environment variables for reuse. But keep in mind security concerns.
+
 
 ## Running
 Depending on the configuration (above) new AWS credentials can be obtained by running:
