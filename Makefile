@@ -16,6 +16,11 @@ DOCKER_USER_ID := christophshyper
 DOCKER_IMAGE := docker-okta-aws-sso
 DOCKER_NAME := $(DOCKER_USER_ID)/$(DOCKER_IMAGE)
 BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
+NAME := "Single Sign-On solution for AWS via Okta"
+DESCRIPTION := "Docker image for AWS Signle Sign-On with Okta"
+REPO_URL := "https://github.com/ChristophShyper/docker-okta-aws-sso"
+AUTHOR := "Krzysztof Szyper <biotyk@mail.com>"
+HOMEPAGE := "https://christophshyper.github.io/"
 
 # Dependent repo
 DEP_OWNER := Nike-Inc
@@ -37,7 +42,7 @@ help: ## Display help prompt
 	$(info Available options:)
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "$(TXT_YELLOW)%-25s $(TXT_RESET) %s\n", $$1, $$2}'
 
-build: ## Buid Docker image
+build: ## Build Docker image
 	$(info $(NL)$(TXT_GREEN) == STARTING BUILD ==$(TXT_RESET))
 	$(info $(TXT_GREEN)Release tag:$(TXT_YELLOW)        $(VERSION)$(TXT_RESET))
 	$(info $(TXT_GREEN)Current branch:$(TXT_YELLOW)     $(CURRENT_BRANCH)$(TXT_RESET))
@@ -48,22 +53,31 @@ build: ## Buid Docker image
 	@git clone http://github.com/$(DEP_OWNER)/$(DEP_REPO)
 	$(info $(NL)$(TXT_GREEN)Building Docker image:$(TXT_YELLOW) $(DOCKER_NAME):$(VERSION)$(TXT_RESET))
 	@cd $(DEP_REPO); docker build \
-		--build-arg BUILD_DATE=$(BUILD_DATE) \
-		--build-arg VCS_REF=$(GITHUB_SHORT_SHA) \
-		--build-arg VERSION=$(VERSION) \
 		--file=Dockerfile \
 		--tag=$(DOCKER_NAME):$(VERSION)  \
 		--label "org.label-schema.build-date=${BUILD_DATE}" \
-        --label	"org.label-schema.description=Docker image for AWS Signle Sign-On with Okta." \
-        --label	"org.label-schema.name=docker-okta-aws-sso" \
-        --label "org.label-schema.schema-version=1.0"	\
-        --label "org.label-schema.url=https://christophshyper.github.io/" \
-        --label	"org.label-schema.vcs-ref=${VCS_REF}" \
-        --label	"org.label-schema.vcs-url=https://github.com/ChristophShyper/docker-okta-aws-sso" \
-        --label	"org.label-schema.vendor=Krzysztof Szyper <biotyk@mail.com>" \
-        --label	"org.label-schema.version=${VERSION}" \
-        --label	"maintainer=Krzysztof Szyper <biotyk@mail.com>" \
-        --label	"repository=https://github.com/ChristophShyper/docker-okta-aws-sso" \
+		--label "org.label-schema.name=${NAME}" \
+		--label "org.label-schema.description=${DESCRIPTION}" \
+		--label "org.label-schema.usage=README.md" \
+		--label "org.label-schema.url=${HOMEPAGE}" \
+		--label "org.label-schema.vcs-url=${REPO_URL}" \
+		--label "org.label-schema.vcs-ref=${GITHUB_SHORT_SHA}" \
+		--label "org.label-schema.vendor=${AUTHOR}" \
+		--label "org.label-schema.version=${VERSION}" \
+		--label "org.label-schema.schema-version=1.0"	\
+		--label "org.opencontainers.image.created=${BUILD_DATE}" \
+		--label "org.opencontainers.image.authors=${AUTHOR}" \
+		--label "org.opencontainers.image.url=${HOMEPAGE}" \
+		--label "org.opencontainers.image.documentation=${REPO_URL}/blob/master/README.md" \
+		--label "org.opencontainers.image.source=${REPO_URL}" \
+		--label "org.opencontainers.image.version=${VERSION}" \
+		--label "org.opencontainers.image.revision=${GITHUB_SHORT_SHA}" \
+		--label "org.opencontainers.image.vendor=${AUTHOR}" \
+		--label "org.opencontainers.image.licenses=MIT" \
+		--label "org.opencontainers.image.title=${NAME}" \
+		--label "org.opencontainers.image.description=${DESCRIPTION}" \
+		--label "maintainer=${AUTHOR}" \
+		--label "repository=${REPO_URL}" \
 		.
 	@rm -rf $(DEP_REPO)
 
