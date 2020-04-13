@@ -30,7 +30,6 @@ This Docker image just packs their tool to quick reuse without the need of insta
 [
 ![DockerHub](https://img.shields.io/badge/docker-christophshyper%2Fdocker--okta--aws--sso-blue.svg?style=flat-square&logo=docker)
 ![Image size](https://img.shields.io/docker/image-size/christophshyper/docker-okta-aws-sso/latest?label=Image%20size&style=flat-square&logo=docker)
-![Dockerfile size](https://img.shields.io/github/size/christophshyper/docker-okta-aws-sso/Dockerfile?label=Dockerfile%20size&style=flat-square&logo=docker)
 ![Docker Pulls](https://img.shields.io/docker/pulls/christophshyper/docker-okta-aws-sso?color=blue&label=Pulls&logo=docker&style=flat-square)
 ](https://hub.docker.com/r/christophshyper/docker-okta-aws-sso "shields.io")
 
