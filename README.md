@@ -1,4 +1,4 @@
-# Docker image for AWS Signle Sign-On with Okta.
+# Docker image for AWS Single Sign-On with Okta.
 
 Dockerized ([christophshyper/docker-okta-aws-sso](https://hub.docker.com/repository/docker/christophshyper/docker-okta-aws-sso)) Single Sign-On solution for [Amazon Web Services](https://aws.amazon.com/) via [Okta](https://www.okta.com/).
 
@@ -7,10 +7,10 @@ Okta is one of the leaders of SSO solutions, but lacks native CLI tools.
 The best, in my humble opinion, tool that fixes that problem is [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds) made by [Nike Inc.](http://engineering.nike.com). More of their interesting work can be found on [Nike-Inc](https://github.com/Nike-Inc).
 
 For details information about [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds)'s configuration please refer to [README.md](https://github.com/Nike-Inc/gimme-aws-creds/blob/master/README.md).
-<br>Docker's entrypoint is binary of `gimme-aws-creds` and can accept any parameters, even when running as an alias, or a function (check usage below).
-<br>It supports Multi Factor Authentication. Not only with Authenticator app but even with Yubikey.
+<br>Docker's entrypoint is the binary of `gimme-aws-creds` and can accept any parameters, even when running as an alias, or a function (check usage below).
+<br>It supports Multi Factor Authentication. Not only with authenticator app but even with Yubikey (without PIN).
 
-This Docker image just packs their tool to quick reuse without the need of installing with Python. 
+This Docker image just packs the tool to quickly reuse it without the need of installing with Python.
 <br>It should have access only to following configuration files: 
 * [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds), default is `~/.okta_aws_login_config`
 * [aws-cli](https://github.com/aws/aws-cli), default is `~/.aws/credentials`
@@ -18,14 +18,14 @@ This Docker image just packs their tool to quick reuse without the need of insta
 
 ## Badge swag
 [
-![GitHub](https://img.shields.io/badge/github-ChristophShyper%2Fdocker--okta--aws--sso-brightgreen.svg?style=flat-square&logo=github)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/christophshyper/docker-okta-aws-sso?color=brightgreen&label=Code%20size&style=flat-square&logo=github)
-![GitHub last commit](https://img.shields.io/github/last-commit/christophshyper/docker-okta-aws-sso?color=brightgreen&label=Last%20commit&style=flat-square&logo=github)
-](https://github.com/christophshyper/docker-okta-aws-sso "shields.io")
-[![Push to master](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20master?color=brightgreen&label=Master%20branch&logo=github&style=flat-square)
-](https://github.com/ChristophShyper/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+master%22)
-[![Push to other](https://img.shields.io/github/workflow/status/christophshyper/docker-okta-aws-sso/Push%20to%20other?color=brightgreen&label=Pull%20requests&logo=github&style=flat-square)
-](https://github.com/ChristophShyper/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+other%22)
+![GitHub](https://img.shields.io/badge/github-devops--infra%2Fdocker--okta--aws--sso-brightgreen.svg?style=flat-square&logo=github)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/devops-infra/docker-okta-aws-sso?color=brightgreen&label=Code%20size&style=flat-square&logo=github)
+![GitHub last commit](https://img.shields.io/github/last-commit/devops-infra/docker-okta-aws-sso?color=brightgreen&label=Last%20commit&style=flat-square&logo=github)
+](https://github.com/devops-infra/docker-okta-aws-sso "shields.io")
+[![Push to master](https://img.shields.io/github/workflow/status/devops-infra/docker-okta-aws-sso/Push%20to%20master?color=brightgreen&label=Master%20branch&logo=github&style=flat-square)
+](https://github.com/devops-infra/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+master%22)
+[![Push to other](https://img.shields.io/github/workflow/status/devops-infra/docker-okta-aws-sso/Push%20to%20other?color=brightgreen&label=Pull%20requests&logo=github&style=flat-square)
+](https://github.com/devops-infra/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+other%22)
 <br>
 [
 ![DockerHub](https://img.shields.io/badge/docker-christophshyper%2Fdocker--okta--aws--sso-blue.svg?style=flat-square&logo=docker)
@@ -53,9 +53,9 @@ function okta-aws() {
 }
 ```
 
-Run the interactive installer by executing: `okta --action-configure`.
+Run the interactive installer by executing: `okta-aws --action-configure`.
 
-For more information run `okta --help`.
+For more information run `okta-aws --help`.
 
 **Simplest** configuration file:
 ```
@@ -80,5 +80,5 @@ Parameters, like password, can be also passed via environment variables for reus
 
 ## Running
 Depending on the configuration (above) new AWS credentials can be obtained by running:
-* for a default action: `okta`
-* for a selected profile `okta --profile Administrator`
+* for a default action: `okta-aws`
+* for a selected profile `okta-aws --profile Administrator`

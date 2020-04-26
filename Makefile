@@ -11,15 +11,14 @@ GITHUB_SHA ?= aabbccddeeff
 # Other variables and constants
 CURRENT_BRANCH := $(shell echo $(GITHUB_REF) | sed 's/refs\/heads\///')
 GITHUB_SHORT_SHA := $(shell echo $(GITHUB_SHA) | cut -c1-7)
-RELEASE_BRANCH := master
 DOCKER_USER_ID := christophshyper
 DOCKER_IMAGE := docker-okta-aws-sso
 DOCKER_NAME := $(DOCKER_USER_ID)/$(DOCKER_IMAGE)
 BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
 NAME := Single Sign-On solution for AWS via Okta
-DESCRIPTION := Docker image for AWS Signle Sign-On with Okta
-REPO_URL := https://github.com/ChristophShyper/docker-okta-aws-sso
-AUTHOR := Krzysztof Szyper <biotyk@mail.com>
+DESCRIPTION := Docker image for AWS Single Sign-On with Okta
+REPO_URL := https://github.com/devops-infra/docker-okta-aws-sso
+AUTHOR := KKrzysztof Szyper / ChristophShyper <biotyk@mail.com>
 HOMEPAGE := https://christophshyper.github.io/
 
 # Dependent repo
