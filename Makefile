@@ -19,7 +19,7 @@ BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
 NAME := Single Sign-On solution for AWS via Okta
 DESCRIPTION := Docker image for AWS Single Sign-On with Okta
 REPO_URL := https://github.com/devops-infra/docker-okta-aws-sso
-AUTHOR := KKrzysztof Szyper / ChristophShyper <biotyk@mail.com>
+AUTHOR := Krzysztof Szyper / ChristophShyper <biotyk@mail.com>
 HOMEPAGE := https://christophshyper.github.io/
 
 # Dependent repo
