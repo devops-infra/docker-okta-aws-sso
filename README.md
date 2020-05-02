@@ -1,6 +1,6 @@
 # Docker image for AWS Single Sign-On with Okta.
 
-Dockerized ([christophshyper/docker-okta-aws-sso](https://hub.docker.com/repository/docker/christophshyper/docker-okta-aws-sso)) Single Sign-On solution for [Amazon Web Services](https://aws.amazon.com/) via [Okta](https://www.okta.com/).
+Dockerized ([devopsinfra/docker-okta-aws-sso](https://hub.docker.com/repository/docker/devopsinfra/docker-okta-aws-sso)) Single Sign-On solution for [Amazon Web Services](https://aws.amazon.com/) via [Okta](https://www.okta.com/).
 
 Okta is one of the leaders of SSO solutions, but lacks native CLI tools.
 
@@ -28,10 +28,10 @@ This Docker image just packs the tool to quickly reuse it without the need of in
 ](https://github.com/devops-infra/docker-okta-aws-sso/actions?query=workflow%3A%22Push+to+other%22)
 <br>
 [
-![DockerHub](https://img.shields.io/badge/docker-christophshyper%2Fdocker--okta--aws--sso-blue.svg?style=flat-square&logo=docker)
-![Image size](https://img.shields.io/docker/image-size/christophshyper/docker-okta-aws-sso/latest?label=Image%20size&style=flat-square&logo=docker)
-![Docker Pulls](https://img.shields.io/docker/pulls/christophshyper/docker-okta-aws-sso?color=blue&label=Pulls&logo=docker&style=flat-square)
-](https://hub.docker.com/r/christophshyper/docker-okta-aws-sso "shields.io")
+![DockerHub](https://img.shields.io/badge/docker-devopsinfra%2Fdocker--okta--aws--sso-blue.svg?style=flat-square&logo=docker)
+![Image size](https://img.shields.io/docker/image-size/devopsinfra/docker-okta-aws-sso/latest?label=Image%20size&style=flat-square&logo=docker)
+![Docker Pulls](https://img.shields.io/docker/pulls/devopsinfra/docker-okta-aws-sso?color=blue&label=Pulls&logo=docker&style=flat-square)
+](https://hub.docker.com/r/devopsinfra/docker-okta-aws-sso "shields.io")
 
 
 ## Prerequisites
@@ -49,7 +49,7 @@ function okta-aws() {
         --user $(id -u):$(id -g) \
         --volume $(pwd)/.okta_aws_login_config:/.okta_aws_login_config \
         --volume $(pwd)/.aws/credentials:/.aws/credentials \
-        -it christophshyper/docker-okta-aws-sso:latest "$@";
+        -it devopsinfra/docker-okta-aws-sso:latest "$@";
 }
 ```
 
