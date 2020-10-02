@@ -6,6 +6,8 @@ Okta is one of the leaders of SSO solutions, but lacks native CLI tools.
 
 The best, in my humble opinion, tool that fixes that problem is [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds) made by [Nike Inc.](http://engineering.nike.com). More of their interesting work can be found on [Nike-Inc](https://github.com/Nike-Inc).
 
+Currently, supporting v2.3.4 of gimme-aws-creds.
+
 For details information about [gimme-aws-creds](https://github.com/Nike-Inc/gimme-aws-creds)'s configuration please refer to [README.md](https://github.com/Nike-Inc/gimme-aws-creds/blob/master/README.md).
 <br>Docker's entrypoint is the binary of `gimme-aws-creds` and can accept any parameters, even when running as an alias, or a function (check usage below).
 <br>It supports Multi Factor Authentication. Not only with authenticator app but even with Yubikey (without PIN).
