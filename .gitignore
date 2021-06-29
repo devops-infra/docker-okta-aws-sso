@@ -1,6 +1,9 @@
 # Intellij
-/.idea/
+.idea/
 *.iml
+
+# Custom
+.tmp/
 
 # Dependent repo
 gimme-aws-creds/
